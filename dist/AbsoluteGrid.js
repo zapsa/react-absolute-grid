@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -8,27 +8,27 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = createAbsoluteGrid;
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require("lodash");
+var _lodash = require('lodash');
 
-var _BaseDisplayObject = require("./BaseDisplayObject.jsx");
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _BaseDisplayObject = require('./BaseDisplayObject');
 
 var _BaseDisplayObject2 = _interopRequireDefault(_BaseDisplayObject);
 
-var _DragManager = require("./DragManager.js");
+var _DragManager = require('./DragManager');
 
 var _DragManager2 = _interopRequireDefault(_DragManager);
 
-var _LayoutManager = require("./LayoutManager.js");
+var _LayoutManager = require('./LayoutManager');
 
 var _LayoutManager2 = _interopRequireDefault(_LayoutManager);
-
-var _propTypes = require("prop-types");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -80,12 +80,12 @@ function createAbsoluteGrid(DisplayObject) {
     }
 
     _createClass(_class, [{
-      key: "render",
+      key: 'render',
       value: function render() {
         var _this2 = this;
 
         if (!this.state.layoutWidth || !this.props.items.length) {
-          return _react2.default.createElement("div", { ref: function ref(node) {
+          return _react2.default.createElement('div', { ref: function ref(node) {
               return _this2.container = node;
             } });
         }
@@ -137,51 +137,47 @@ function createAbsoluteGrid(DisplayObject) {
         };
         var layout = new _LayoutManager2.default(options, this.state.layoutWidth);
         var gridStyle = {
-          position: "relative",
-          display: "block",
+          position: 'relative',
+          display: 'block',
           height: layout.getTotalHeight(filteredIndex)
         };
 
         return _react2.default.createElement(
-          "div",
-          {
-            style: gridStyle,
-            className: "absoluteGrid",
-            ref: function ref(node) {
+          'div',
+          { style: gridStyle, className: 'absoluteGrid', ref: function ref(node) {
               return _this2.container = node;
-            }
-          },
+            } },
           gridItems
         );
       }
     }, {
-      key: "componentDidMount",
+      key: 'componentDidMount',
       value: function componentDidMount() {
-        //If responsive, listen for resize
+        // If responsive, listen for resize
         if (this.props.responsive) {
-          window.addEventListener("resize", this.onResize);
+          window.addEventListener('resize', this.onResize);
         }
         this.onResize();
       }
     }, {
-      key: "componentWillUnmount",
+      key: 'componentWillUnmount',
       value: function componentWillUnmount() {
-        window.removeEventListener("resize", this.onResize);
+        window.removeEventListener('resize', this.onResize);
       }
     }]);
 
     return _class;
   }(Comp), _class.defaultProps = {
     items: [],
-    keyProp: "key",
-    filterProp: "filtered",
-    sortProp: "sort",
+    keyProp: 'key',
+    filterProp: 'filtered',
+    sortProp: 'sort',
     itemWidth: 128,
     itemHeight: 128,
     verticalMargin: -1,
     responsive: false,
     dragEnabled: false,
-    animation: "transform 300ms ease",
+    animation: 'transform 300ms ease',
     zoom: 1,
     onMove: function onMove() {},
     onDragStart: function onDragStart() {},

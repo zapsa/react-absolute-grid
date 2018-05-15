@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --config webpack.config.dev.babel.js --port 9293",
     "build": "rimraf dist && babel src -d dist",
     "prepare": "npm run build",
-    "publish": "zap-slack-nodetifications @zapsa/zap-time-picker $npm_package_version",
+    "publish": "zap-slack-nodetifications @zapsa/zap-drag-and-drop $npm_package_version",
     "lint": "npm run lint:src && npm run lint:webpack",
     "lint:src": "eslint \"./src/**\"; exit 0",
     "styleguide": "styleguidist server",

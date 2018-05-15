@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -10,17 +10,17 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 exports.default = createDisplayObject;
 
-var _react = require("react");
+var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _LayoutManager = require("./LayoutManager.js");
-
-var _LayoutManager2 = _interopRequireDefault(_LayoutManager);
-
-var _propTypes = require("prop-types");
+var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _LayoutManager = require('./LayoutManager');
+
+var _LayoutManager2 = _interopRequireDefault(_LayoutManager);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57,11 +57,11 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
     }
 
     _createClass(_class, [{
-      key: "updateDrag",
+      key: 'updateDrag',
       value: function updateDrag(x, y) {
         var _this2 = this;
 
-        //Pause Animation lets our item return to a snapped position without being animated
+        // Pause Animation lets our item return to a snapped position without being animated
         var pauseAnimation = false;
         if (!this.props.dragManager.dragItem) {
           pauseAnimation = true;
@@ -76,7 +76,7 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
         });
       }
     }, {
-      key: "getStyle",
+      key: 'getStyle',
       value: function getStyle() {
         var options = {
           itemWidth: this.props.itemWidth,
@@ -86,45 +86,45 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
         };
         var layout = new _LayoutManager2.default(options, this.props.layoutWidth);
         var style = layout.getStyle(this.props.index, this.props.animation, this.props.item[this.props.filterProp]);
-        //If this is the object being dragged, return a different style
+        // If this is the object being dragged, return a different style
         if (this.props.dragManager.dragItem && this.props.dragManager.dragItem[this.props.keyProp] === this.props.item[this.props.keyProp]) {
           var dragStyle = this.props.dragManager.getStyle(this.state.dragX, this.state.dragY);
           return _extends({}, style, dragStyle);
         } else if (this.state && this.state.pauseAnimation) {
           var pauseAnimationStyle = _extends({}, style);
-          pauseAnimationStyle.WebkitTransition = "none";
-          pauseAnimationStyle.MozTransition = "none";
-          pauseAnimationStyle.msTransition = "none";
-          pauseAnimationStyle.transition = "none";
+          pauseAnimationStyle.WebkitTransition = 'none';
+          pauseAnimationStyle.MozTransition = 'none';
+          pauseAnimationStyle.msTransition = 'none';
+          pauseAnimationStyle.transition = 'none';
           return pauseAnimationStyle;
         }
         return style;
       }
     }, {
-      key: "componentDidMount",
+      key: 'componentDidMount',
       value: function componentDidMount() {
         if (this.props.dragEnabled) {
-          this.domNode.addEventListener("mousedown", this.onDrag);
-          this.domNode.addEventListener("touchstart", this.onDrag);
-          this.domNode.setAttribute("data-key", this.props.item[this.props.keyProp]);
+          this.domNode.addEventListener('mousedown', this.onDrag);
+          this.domNode.addEventListener('touchstart', this.onDrag);
+          this.domNode.setAttribute('data-key', this.props.item[this.props.keyProp]);
         }
       }
     }, {
-      key: "componentWillUnmount",
+      key: 'componentWillUnmount',
       value: function componentWillUnmount() {
         if (this.props.dragEnabled) {
           this.props.dragManager.endDrag();
-          this.domNode.removeEventListener("mousedown", this.onDrag);
-          this.domNode.removeEventListener("touchstart", this.onDrag);
+          this.domNode.removeEventListener('mousedown', this.onDrag);
+          this.domNode.removeEventListener('touchstart', this.onDrag);
         }
       }
     }, {
-      key: "render",
+      key: 'render',
       value: function render() {
         var _this3 = this;
 
         return _react2.default.createElement(
-          "div",
+          'div',
           { ref: function ref(node) {
               return _this3.domNode = node;
             }, style: this.getStyle() },

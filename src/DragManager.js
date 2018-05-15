@@ -38,31 +38,39 @@ export default class DragManager {
 
       let targetKey;
       let targetElement = document.elementFromPoint(clientX, clientY);
-      while (targetElement.parentNode) {
-        if (targetElement.getAttribute("data-key")) {
-          targetKey = targetElement.getAttribute("data-key");
-          break;
+      if (!targetElement) {
+        if (this.dragY < 0) {
+          window.scrollBy({ left: 0, top: -20, behavior: 'smooth' });
+        } else {
+          window.scrollBy({ left: 0, top: 20, behavior: 'smooth' });
         }
-        targetElement = targetElement.parentNode;
-      }
+      } else {
+        while (targetElement.parentNode) {
+          if (targetElement.getAttribute('data-key')) {
+            targetKey = targetElement.getAttribute('data-key');
+            break;
+          }
+          targetElement = targetElement.parentNode;
+        }
 
-      if (targetKey && targetKey !== this.dragItem[this.keyProp]) {
-        this.moveFn(this.dragItem[this.keyProp], targetKey);
-      }
+        if (targetKey && targetKey !== this.dragItem[this.keyProp]) {
+          this.moveFn(this.dragItem[this.keyProp], targetKey);
+        }
 
-      e.stopPropagation();
-      e.preventDefault();
+        e.stopPropagation();
+        e.preventDefault();
+      }
     }
 
     this.dragMoveFn(e);
   }
 
   endDrag() {
-    document.removeEventListener("mousemove", this.dragMove);
-    document.removeEventListener("mouseup", this.endDrag);
+    document.removeEventListener('mousemove', this.dragMove);
+    document.removeEventListener('mouseup', this.endDrag);
 
     this.dragItem = null;
-    if (this.update && typeof this.update === "function") {
+    if (this.update && typeof this.update === 'function') {
       this.update(null, null);
     }
     this.update = null;
@@ -85,13 +93,13 @@ export default class DragManager {
       this.initialEventX = pageX;
       this.initialEventY = pageY;
 
-      document.addEventListener("mousemove", this.dragMove);
-      document.addEventListener("touchmove", this.dragMove);
-      document.addEventListener("mouseup", this.endDrag);
-      document.addEventListener("touchend", this.endDrag);
-      document.addEventListener("touchcancel", this.endDrag);
+      document.addEventListener('mousemove', this.dragMove);
+      document.addEventListener('touchmove', this.dragMove);
+      document.addEventListener('mouseup', this.endDrag);
+      document.addEventListener('touchend', this.endDrag);
+      document.addEventListener('touchcancel', this.endDrag);
 
-      //This is needed to stop text selection in most browsers
+      // This is needed to stop text selection in most browsers
       e.preventDefault();
     }
 
@@ -101,10 +109,10 @@ export default class DragManager {
   getStyle(x, y) {
     const dragStyle = {};
     const transform = `translate3d(${x}px, ${y}px, 0)`;
-    //Makes positioning simpler if we're fixed
-    dragStyle.position = "fixed";
+    // Makes positioning simpler if we're fixed
+    dragStyle.position = 'fixed';
     dragStyle.zIndex = 1000;
-    //Required for Fixed positioning
+    // Required for Fixed positioning
     dragStyle.left = 0;
     dragStyle.top = 0;
     dragStyle.WebkitTransform = transform;
@@ -112,14 +120,14 @@ export default class DragManager {
     dragStyle.msTransform = transform;
     dragStyle.transform = transform;
 
-    //Turn off animations for this item
-    dragStyle.WebkitTransition = "none";
-    dragStyle.MozTransition = "none";
-    dragStyle.msTransition = "none";
-    dragStyle.transition = "none";
+    // Turn off animations for this item
+    dragStyle.WebkitTransition = 'none';
+    dragStyle.MozTransition = 'none';
+    dragStyle.msTransition = 'none';
+    dragStyle.transition = 'none';
 
-    //Allows mouseover to work
-    dragStyle.pointerEvents = "none";
+    // Allows mouseover to work
+    dragStyle.pointerEvents = 'none';
 
     return dragStyle;
   }
