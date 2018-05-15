@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from 'react';
-import { debounce, sortBy } from 'lodash';
+import sortBy from 'lodash.sortby';
+import debounce from 'lodash.debounce';
 import PropTypes from 'prop-types';
 
 import createDisplayObject from './BaseDisplayObject';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as _ from 'lodash';
+import find from 'lodash.find';
+import debounce from 'lodash.debounce';
 
 import createAbsoluteGrid from '../../../src/AbsoluteGrid';
 import screens from './sampleData';
@@ -35,8 +36,8 @@ class ExampleView extends Component {
   }
 
   onMove(source, target) {
-    const Testsource = _.find(this.state.data, { key: parseInt(source, 10) });
-    const Testtarget = _.find(this.state.data, { key: parseInt(target, 10) });
+    const Testsource = find(this.state.data, { key: parseInt(source, 10) });
+    const Testtarget = find(this.state.data, { key: parseInt(target, 10) });
 
     const targetSort = Testtarget.sort;
 
@@ -67,7 +68,7 @@ class ExampleView extends Component {
 
   render() {
     const AbsoluteGrid = this.AbsoluteGrid;
-    const onMoveDebounced = _.debounce(this.onMove, 40);
+    const onMoveDebounced = debounce(this.onMove, 40);
     return (
       <div style={{ minHeight: '100vh' }}>
         <AbsoluteGrid

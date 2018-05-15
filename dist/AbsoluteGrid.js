@@ -12,7 +12,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _lodash = require('lodash');
+var _lodash = require('lodash.sortby');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _lodash3 = require('lodash.debounce');
+
+var _lodash4 = _interopRequireDefault(_lodash3);
 
 var _propTypes = require('prop-types');
 
@@ -71,7 +77,7 @@ function createAbsoluteGrid(DisplayObject) {
         }
       };
 
-      _this.onResize = (0, _lodash.debounce)(_this.onResize, 150);
+      _this.onResize = (0, _lodash4.default)(_this.onResize, 150);
       _this.dragManager = new _DragManager2.default(_this.props.onMove, _this.props.onDragStart, _this.props.onDragEnd, _this.props.onDragMove, _this.props.keyProp);
       _this.state = {
         layoutWidth: 0
@@ -99,7 +105,7 @@ function createAbsoluteGrid(DisplayObject) {
          This also clears out filtered items from the sort order and
          eliminates gaps and duplicate sorts
          */
-        (0, _lodash.sortBy)(this.props.items, this.props.sortProp).forEach(function (item) {
+        (0, _lodash2.default)(this.props.items, this.props.sortProp).forEach(function (item) {
           if (!item[_this2.props.filterProp]) {
             var key = item[_this2.props.keyProp];
             sortedIndex[key] = filteredIndex;
