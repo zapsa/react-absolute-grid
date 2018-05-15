@@ -1,0 +1,27 @@
+.navbar {
+  border-bottom: 1px solid #ebebeb;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        display: block;
+        padding: 2rem 2rem calc(2rem - 1px);
+        border-bottom: 1px solid transparent;
+        color: #73777a;
+        text-decoration: none;
+        font-size: 1.875rem;
+
+        &.active {
+          border-color: #0056c9;
+          color: #1f2226;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

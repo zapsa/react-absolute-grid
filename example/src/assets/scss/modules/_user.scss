@@ -1,0 +1,62 @@
+.user {
+  padding: 8rem 0;
+}
+
+.user-header {
+  display: flex;
+  margin-bottom: 3rem;
+
+  .user-header-avatar {
+    overflow: hidden;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 0.375rem;
+    background-color: #f5f5f5;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .user-header-content {
+    flex: 1;
+    margin-left: 2rem;
+
+    h1 {
+      margin-bottom: 2rem;
+    }
+
+    .jobTitle,
+    .company {
+      color: #73777a;
+      font-size: 3rem;
+    }
+  }
+}
+
+.user-body {
+  .user-body-group {
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.875rem;
+    }
+
+    .row {
+      display: flex;
+      font-size: 1.875rem;
+
+      .row-label {
+        width: 23.5rem;
+        color: #73777a;
+      }
+
+      .row-value {
+        color: #1f2226;
+      }
+    }
+  }
+
+  .user-body-group + .user-body-group {
+    margin-top: 3rem;
+  }
+}

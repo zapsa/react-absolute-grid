@@ -1,0 +1,8 @@
+@mixin icon-fill ($color, $opacity: 1) {
+  svg {
+    path {
+      fill: $color;
+      fill-opacity: $opacity;
+    }
+  }
+}

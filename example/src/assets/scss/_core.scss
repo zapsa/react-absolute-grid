@@ -1,0 +1,46 @@
+#root,
+[data-reactroot],
+body,
+html {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 8px;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-x: hidden;
+  color: $grey-900;
+  letter-spacing: 0.1px;
+  font-weight: 400;
+  font-size: 1.875rem;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+[data-reactroot] {
+  display: flex;
+}
+
+img {
+  vertical-align: middle;
+}

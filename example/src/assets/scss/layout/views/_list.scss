@@ -1,0 +1,204 @@
+.list {
+  margin-bottom: 3rem;
+}
+
+.view-list,
+.list-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  height: 7rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.list-header {
+  font-weight: 500;
+
+  .column {
+    color: $grey-600;
+  }
+
+  .column.is-active {
+    color: $grey-900;
+  }
+}
+
+.list-selectionCounter {
+  //
+}
+
+.column {
+  overflow: hidden;
+  margin-left: 1rem;
+  color: #1f2226;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a {
+    color: $grey-900;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .link {
+    color: $prime-500;
+
+    &:hover {
+      color: $prime-700;
+    }
+  }
+}
+
+
+
+// Modifier
+//
+
+.column--listEnd {
+  flex: 0 1 25rem;
+  margin-left: 2rem;
+}
+
+.column--title {
+  flex: 1 0 auto;
+  max-width: 100rem;
+  color: #1f2226;
+
+  .zap-icon {
+    margin-right: 1rem;
+    @include icon-fill($grey-500);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.column--meta {
+  color: #73777a;
+}
+
+.column--menu {
+  flex: 0 1 3rem;
+  overflow: visible;
+  margin-left: auto;
+  text-overflow: inherit;
+}
+
+.column--icon {
+  margin-right: 1rem;
+  line-height: 1rem;
+  @include icon-fill($grey-500);
+}
+
+.column--avatar {
+  overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+// Column With - Modifier
+//
+// Define a specific column width,
+// it can be used with every column element except title column
+
+.column--w2 {
+  flex: 0 1 2rem;
+}
+.column--w3 {
+  flex: 0 1 3rem;
+}
+.column--w10 {
+  flex: 0 1 10rem;
+}
+.column--w15 {
+  flex: 0 1 15rem;
+}
+.column--w20 {
+  flex: 0 1 18rem;
+}
+.column--w25 {
+  flex: 0 1 25rem;
+}
+
+// Title with 2 lines
+.column--title2l {
+  flex: 1 0 0%;
+  color: #1f2226;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+}
+
+.column--title2l-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.column--title2l-meta {
+  color: $grey-500;
+  @include font-xs;
+}
+
+
+// Modifer for modules
+
+.view-list--contacts {
+  > .column--name {
+    width: 57.5rem;
+    color: #1f2226;
+
+    a {
+      color: #1f2226;
+    }
+  }
+}
+
+.view-list--events {
+  > .column--date {
+    margin-right: 1rem;
+    width: 5rem;
+    text-align: center;
+    font-size: 1.75rem;
+    line-height: 2rem;
+
+    .day {
+      color: #1f2226;
+    }
+
+    .month {
+      color: #d42433;
+    }
+  }
+
+  > .column--picture {
+    overflow: hidden;
+    width: 8rem;
+    height: 5rem;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.column--join {
+  flex: 0 0 12rem;
+  text-align: right;
+  line-height: 1;
+
+  .zap-icon {
+    @include icon-fill($grey-900);
+  }
+}

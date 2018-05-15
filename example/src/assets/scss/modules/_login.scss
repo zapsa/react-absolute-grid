@@ -1,0 +1,92 @@
+.loginContainer {
+  display: flex;
+  height: 100%;
+}
+
+.loginLeft {
+  display: flex;
+  flex: 0 1 90rem;
+  //align-items: center;
+  padding: 13rem;
+  height: 100%;
+
+  .loginCard {
+    width: 100%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .button {
+      align-self: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      min-width: 33rem;
+    }
+  }
+}
+
+.loginCard-title {
+  margin: 0 0 3rem;
+  @include font-xl;
+
+  + .loginCard-description {
+    margin-top: -2rem;
+  }
+}
+
+.loginCard-description {
+  margin: 0 0 3rem;
+  color: $grey-600;
+}
+
+.login-alternativeButtons {
+  text-align: center;
+
+  .button {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border: 0;
+    background-color: transparent;
+    color: $grey-500;
+
+    &:hover {
+      background-color: transparent;
+      color: $grey-700;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.loginOptions {
+  text-align: center;
+}
+
+.loginOptions-orDivider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto 2rem auto;
+  height: 4rem;
+  border-top: 1px solid $grey-200;
+}
+
+.loginOptions-orDivider-description {
+  position: absolute;
+  top: -1.765rem;
+  display: inline-block;
+  padding: 0 1rem;
+  background-color: $white-00;
+  color: $grey-500;
+  text-align: center;
+  font-weight: 500;
+}
+
+.loginRight {
+  flex: 1;
+  background-color: $grey-200;
+}

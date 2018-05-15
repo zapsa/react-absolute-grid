@@ -1,0 +1,313 @@
+.rdt {
+  position: relative;
+}
+
+.rdtPicker {
+  position: absolute;
+  z-index: 99999 !important;
+  display: none;
+  margin-top: 1px;
+  width: 294px;
+  border: 1px solid #f9f9f9;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  color: $grey-900;
+}
+
+.rdtOpen .rdtPicker {
+  display: block;
+}
+
+.rdtStatic .rdtPicker {
+  position: static;
+  box-shadow: none;
+}
+
+.rdtPicker .rdtTimeToggle {
+  text-align: center;
+}
+
+.rdtPicker table {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  border-spacing: 1rem;
+}
+
+.rdtPicker td,
+.rdtPicker th {
+  height: 32px;
+  text-align: center;
+  line-height: 2rem;
+}
+
+.rdtPicker td {
+  cursor: pointer;
+}
+
+.rdtPicker .rdtTodayButton:hover,
+.rdtPicker .rdtTimeToggle:hover,
+.rdtPicker td.rdtDay:hover,
+.rdtPicker td.rdtHour:hover,
+.rdtPicker td.rdtMinute:hover,
+.rdtPicker td.rdtSecond:hover {
+  background: $grey-100;
+  cursor: pointer;
+}
+
+.rdtPicker td.rdtDay:hover {
+  border-radius: 100%;
+}
+
+.rdtPicker td.rdtNew,
+.rdtPicker td.rdtOld {
+  color: $grey-500;
+}
+
+.rdtPicker td.rdtToday {
+  position: relative;
+}
+
+.rdtPicker td.rdtToday::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  border: 1px solid $grey-900;
+  border-radius: 100%;
+  box-shadow: 0 0 1px 0px $grey-900 inset; // border-radius antialiasing
+  content: '';
+}
+
+.rdtPicker td.rdtActive,
+.rdtPicker td.rdtActive:hover {
+  border-radius: 100%;
+  background-color: $grey-900;
+  color: $white-00;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.rdtPicker td.rdtActive.rdtToday:before {
+  border-bottom-color: $white-00;
+}
+
+.rdtPicker td.rdtDisabled,
+.rdtPicker td.rdtDisabled:hover {
+  background: none;
+  color: $grey-500;
+  cursor: not-allowed;
+}
+
+.rdtPicker td span.rdtOld {
+  color: #999999;
+}
+
+.rdtPicker td span.rdtDisabled,
+.rdtPicker td span.rdtDisabled:hover {
+  background: none;
+  color: $grey-500;
+  cursor: not-allowed;
+}
+
+.rdtPicker th {
+  border-bottom: 1rem solid $white-00;
+}
+
+.rdtPicker .dow {
+  padding-bottom: 1rem;
+  width: 14.2857%;
+  border-bottom: none;
+  background-color: $grey-50;
+  color: $grey-600;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+}
+
+.rdtPicker th.dow {
+  position: relative;
+  z-index: 500;
+}
+
+.rdtPicker th.rdtSwitch {
+  width: 100px;
+  line-height: 3rem;
+}
+
+.rdtPicker th.rdtNext,
+.rdtPicker th.rdtPrev {
+  vertical-align: top;
+  font-size: 21px;
+  line-height: 1;
+}
+
+.rdtPicker th.rdtSwitch,
+.rdtPicker th.rdtNext,
+.rdtPicker th.rdtPrev {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.rdtNext span,
+.rdtPrev span {
+  display: block;
+  /* Chrome/Safari/Opera */
+
+   -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Konqueror */
+     -moz-user-select: none;
+  /* Firefox */
+      -ms-user-select: none;
+  /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+.rdtPicker th.rdtDisabled,
+.rdtPicker th.rdtDisabled:hover {
+  background: none;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.rdtDays thead {
+  position: relative;
+}
+
+
+.rdtDays thead::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  margin-top: -6rem;
+  height: 5rem;
+  background-color: $grey-50;
+  content: '';
+}
+
+@-moz-document url-prefix() {
+  // Mozila workarround to avoid a cut off of the background color
+  .rdtDays thead::after {
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+}
+
+.rdtTime table:first-child,
+.rdtMonths table:first-child {
+  border-bottom: 1px solid $grey-200;
+}
+
+.rdtTime  th,
+.rdtMonths th {
+  border-bottom: 0;
+}
+
+.rdtMonths thead::after {
+  display: none;
+}
+
+.rdtPicker thead tr:first-child th {
+  cursor: pointer;
+}
+
+.rdtPicker thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+
+.rdtPicker tfoot {
+  border-top: 1px solid $grey-200;
+}
+
+.rdtPicker button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.rdtPicker button:hover {
+  background-color: #eeeeee;
+}
+
+.rdtPicker thead button {
+  width: 100%;
+  height: 100%;
+}
+
+td.rdtMonth,
+td.rdtYear {
+  width: 25%;
+  height: 63px;
+  cursor: pointer;
+}
+
+td.rdtMonth:hover,
+td.rdtYear:hover {
+  background: #eeeeee;
+}
+
+.rdtCounters {
+  display: inline-block;
+}
+
+.rdtCounters > div {
+  float: left;
+}
+
+.rdtCounter {
+  height: 100px;
+}
+
+.rdtCounter {
+  width: 40px;
+}
+
+.rdtCounterSeparator {
+  line-height: 100px;
+}
+
+.rdtCounter .rdtBtn {
+  display: block;
+  height: 40%;
+  line-height: 40px;
+  cursor: pointer;
+  /* Chrome/Safari/Opera */
+
+   -khtml-user-select: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Konqueror */
+     -moz-user-select: none;
+  /* Firefox */
+      -ms-user-select: none;
+  /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+.rdtCounter .rdtBtn:hover {
+  background: #eeeeee;
+}
+
+.rdtCounter .rdtCount {
+  height: 20%;
+  font-size: 1.2em;
+}
+
+.rdtMilli {
+  padding-left: 8px;
+  width: 48px;
+  vertical-align: middle;
+}
+
+.rdtMilli input {
+  margin-top: 37px;
+  width: 100%;
+  font-size: 1.2em;
+}

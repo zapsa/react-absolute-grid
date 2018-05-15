@@ -1,0 +1,114 @@
+.view-feed-header {
+  position: relative;
+  display: flex;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+}
+
+.view-feed-header-avatar {
+  overflow: hidden;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.375rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+.view-feed-header-content {
+  margin-left: 1rem;
+  color: $grey-700;
+
+  strong {
+    color: $grey-900;
+  }
+
+  .datetime {
+    color: #9c9ea1;
+    @include font-xs;
+  }
+}
+
+.view-feed-header-menu {
+  position: absolute;
+  right: -4rem;
+}
+
+.view-feed-body {
+  margin-left: 6rem;
+
+  .comments {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid $grey-200;
+  }
+}
+
+.view-feed-body-item {
+  display: block;
+  margin-bottom: 2rem;
+  color: $grey-700;
+  @extend .clearfix;
+
+  &:hover {
+    color: $grey-700;
+  }
+
+  .picture {
+    float: left;
+    margin-right: 1rem;
+    border-radius: 0.375rem;
+  }
+
+  h3 {
+    color: $grey-900;
+    @include font-m;
+  }
+
+  .metaInfo {
+    color: $grey-600;
+    @include font-s;
+  }
+
+  .eventBadge {
+    float: left;
+    margin-right: 1rem;
+  }
+}
+
+.feed-list-item,
+.pinned-list-item {
+  padding: 2rem;
+}
+
+.infinite-item + .infinite-item .feed-list-item,
+.pinned-list-item + .pinned-list-item {
+  border-top: 1px solid #ebebeb;
+}
+
+// Pinned
+//
+.pinned-list {
+  border-bottom: 1px solid $grey-200;
+
+  .view-feed + .view-feed {
+    border-top: 1px solid $grey-200;
+  }
+
+  .view-feed-body-item {
+    margin-bottom: 0;
+  }
+}
+
+.pinned-item-marker {
+  margin-top: 0.5rem;
+  margin-left: 3.5rem;
+  color: $grey-500;
+  @include font-xs;
+
+  .zap-icon {
+    margin-right: 1rem;
+    @include icon-fill($grey-500);
+  }
+}

@@ -1,0 +1,12 @@
+a {
+  color: #0056c9;
+  text-decoration: none;
+
+  &:hover {
+    color: #003b94;
+  }
+}
+
+.text--muted {
+  color: $grey-500;
+}

@@ -1,0 +1,58 @@
+
+// Vendor override
+
+.Select-control {
+  //min-height: 8rem;
+  padding: 1rem 2rem;
+}
+
+.Select--multi {
+  .Select-value {
+    display: inline-flex;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0 0.5rem;
+    border: 0;
+    border-radius: 17.5rem;
+    background-color: $grey-300;
+    color: $grey-700;
+    @include font-m;
+  }
+
+  .Select-value-icon {
+    order: 1;
+    border: 0;
+    border-radius: 0;
+    color: $grey-600;
+
+    &:hover {
+      background-color: transparent;
+      color: $grey-900;
+    }
+  }
+
+  a.Select-value-label,
+  .Select-value-label {
+    padding-left: 1rem;
+    border: 0;
+    border-radius: 0;
+    color: $grey-700;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .Select-input {
+    max-height: 3.5rem;
+
+    > input {
+      padding-top: 0.75rem;
+    }
+  }
+
+  &.has-value {
+    .Select-control {
+      padding-bottom: 0.5rem;
+    }
+  }
+}

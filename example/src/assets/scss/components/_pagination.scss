@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-item {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  padding: 0 1rem;
+  outline-width: 0;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  color: $grey-600;
+  cursor: pointer;
+  @include font-m;
+
+  &:hover {
+    //background-color: $grey-50;
+    color: $grey-900;
+  }
+}
+
+.pagination-item--icon {
+  align-self: stretch;
+  line-height: 1rem;
+
+  .zap-icon {
+    @include icon-fill($grey-900);
+  }
+
+  &:hover {
+    .zap-icon {
+      @include icon-fill($grey-700);
+    }
+  }
+}
+
+.pagination-item--active {
+  border-bottom: 2px solid $prime-500;
+  color: $grey-900;
+  font-weight: 500;
+}

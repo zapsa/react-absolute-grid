@@ -1,0 +1,87 @@
+
+$zap-google-map-height: 45rem;
+
+.zap-google-map {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+
+  // hide map and show input
+  &.input-string,
+  &.no-input {
+    .zap-google-map-container,
+    .zap-google-map-element {
+      height: 6rem !important;
+    }
+
+    .gm-style {
+      > * {
+        display: none;
+      }
+      > input {
+        display: block;
+      }
+    }
+  }
+
+  &.edit {
+    .zap-google-map-container {
+      height: $zap-google-map-height + 6rem;
+    }
+
+    .zap-google-map-element {
+      height: $zap-google-map-height + 6rem;
+    }
+  }
+}
+
+.zap-google-map-container {
+  height: $zap-google-map-height;
+}
+
+.zap-google-map-element {
+  height: $zap-google-map-height;
+}
+
+.zap-google-map-clear {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.5rem;
+  z-index: 1;
+  background-color: $white-00;
+
+  &:hover {
+    background-color: $white-00;
+  }
+}
+
+// overwrite the google maps module
+//
+
+// location search input
+.gm-style > input {
+  left: 0 !important;
+  display: block;
+  padding: 1rem 8rem 1rem 2rem;
+  width: 100%;
+  height: auto;
+  height: 6rem;
+  border: 1px solid $grey-300;
+  border-radius: $border-radius;
+  box-shadow: 0 1rem 0 0 $white-00;
+  color: $grey-900;
+  font-size: 1.875rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 3rem;
+  @include placeholder {
+    color: $grey-500;
+    opacity: 1;
+  }
+}
+
+// change the postion of the map
+.zap-google-map.edit {
+  .gm-style > div:first-child[style*='cursor'] {
+    transform: translateY(8rem);
+  }
+}

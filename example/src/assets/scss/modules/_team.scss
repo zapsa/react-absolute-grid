@@ -1,0 +1,25 @@
+.team {
+  position: relative;
+  padding: 8rem 0;
+}
+
+.team-group {
+  padding: 2rem 0;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: #1f2226;
+    font-weight: 400;
+    font-size: 3rem;
+  }
+
+  .actions {
+    margin-top: 2rem;
+  }
+}
+
+.team-group + .team-group {
+  border-top-width: 0;
+}

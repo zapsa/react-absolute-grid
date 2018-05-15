@@ -1,0 +1,32 @@
+.navigation {
+  position: absolute;
+  top: 8rem;
+  left: 8.5rem;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 2rem;
+      list-style-type: none;
+
+      a {
+        color: #73777a;
+
+        &.active {
+          color: $grey-900;
+          font-weight: 500;
+
+          &::before {
+            position: absolute;
+            margin-top: -0.2rem;
+            margin-left: -2rem;
+            color: $prime-500;
+            content: '● ';
+          }
+        }
+      }
+    }
+  }
+}

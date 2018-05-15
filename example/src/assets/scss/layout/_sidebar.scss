@@ -1,0 +1,200 @@
+
+
+// Sidebar Variables
+//
+
+$s-bg: $grey-800 !default;
+$s-logoBorder: rgba($white-00, 0.2) !default;
+// Group Title
+$s-group-title: rgba(white, 0.5) !default;
+// Group Link
+$s-group-link-text: rgba($white-00, 0.8) !default;
+$s-group-link-text--hover: rgba($white-00, 0.8) !default;
+$s-group-link-text--active: $white-00 !default;
+$s-group-link--bg--hover: $grey-900 !default;
+$s-group-link--bg--active: $prime-400 !default;
+// Icons
+$s-iconColor: $white-00 !default;
+$s-iconOpacity: 0.8 !default;
+$s-iconColor--hover: $white-00 !default;
+$s-iconOpacity--hover: 0.8 !default;
+$s-iconColor--active: $white-00 !default;
+$s-iconOpacity--active: 1 !default;
+// Badge
+$s-badge-bg: $white-00 !default;
+$s-badge-text: $grey-800 !default;
+$s-badge-bg--active: $white-00 !default;
+$s-badge-text--active: $grey-800 !default;
+// Sublinkes
+$s-sublinks: rgba($white-00, 0.5) !default;
+// Right-Border Color
+$s-rightBorder-color: null !default;
+
+
+// Sidebar Style
+//
+.sidebar {
+  overflow: auto;
+  width: 28rem;
+  background-color: $s-bg;
+
+  @if $s-rightBorder-color != null {
+    border-right: 1px solid $s-rightBorder-color;
+  }
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  border-bottom: 1px solid $s-logoBorder;
+}
+
+
+// sidebar User
+
+.sidebar-user {
+  display: flex;
+  padding: 3rem 2rem;
+}
+
+.sidebar-user-avatar {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+
+  img {
+    border-radius: 0.375rem;
+  }
+}
+
+.sidebar-user-content {
+  flex: 1;
+  margin-left: 1rem;
+  line-height: 1;
+
+  a {
+    color: $s-group-link-text;
+    @include font-s;
+
+    &:hover {
+      color: $s-group-link-text;
+    }
+  }
+
+  a.logOut {
+    color: $s-sublinks;
+    @include font-xs;
+  }
+}
+
+
+// sidebar group
+
+.sidebar-group {
+  margin: 0 1rem 2rem;
+}
+
+.sidebar-group-title {
+  margin: 0 0 1rem;
+  padding: 0 1rem;
+  color: $s-group-title;
+  text-transform: uppercase;
+  letter-spacing: 0.0675rem;
+  font-size: 1.75rem;
+
+  a {
+    color: $s-group-title;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  button {
+    float: right;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border-width: 0;
+    background-color: transparent;
+    color: rgba($white-00, 0);
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      outline-width: 0;
+    }
+  }
+}
+
+
+.sidebar-group-title-actionIcon {
+  @include icon-fill ($s-group-title);
+}
+
+
+.sidebar-group-list {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    display: block;
+    clear: both;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: $s-group-link-text;
+    line-height: 2rem;
+
+    .zap-icon {
+      float: left;
+      margin-right: 2rem;
+      @include icon-fill($s-iconColor, $s-iconOpacity);
+
+      &.icon--12dp {
+        margin-top: 0.25rem;
+        margin-right: 2.667rem;
+      }
+    }
+
+    .badge {
+      float: right;
+      padding: 0.4rem 1rem;
+      border-radius: 8.5rem;
+      background-color: $s-badge-bg;
+      color: $s-badge-text;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    &:hover {
+      border-radius: 0.375rem;
+      background-color: $s-group-link--bg--hover;
+      color: $s-group-link-text--hover;
+
+      .zap-icon {
+        @include icon-fill($s-iconColor--hover, $s-iconOpacity--hover);
+      }
+    }
+
+    &.active {
+      border-radius: 0.375rem;
+      background-color: $s-group-link--bg--active;
+      color: $s-group-link-text--active;
+
+      .zap-icon {
+        @include icon-fill($s-iconColor--active, $s-iconOpacity--active);
+      }
+
+      .badge {
+        background-color: $s-badge-bg--active;
+        color: $s-badge-text--active;
+      }
+    }
+  }
+}

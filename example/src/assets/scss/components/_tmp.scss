@@ -1,0 +1,14 @@
+
+// Tmp style
+
+.invite {
+  margin-bottom: 4rem;
+}
+
+.invite-item {
+  margin-bottom: 4rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}

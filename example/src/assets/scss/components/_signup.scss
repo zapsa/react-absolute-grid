@@ -1,0 +1,90 @@
+.signupContainer {
+  height: 100%;
+}
+
+.signupNotFoundContainer {
+  display: flex;
+  height: 100%;
+  background-color: #f1f1f1;
+
+  .signupNotFoundCard {
+    background-color: white;
+    margin: auto;
+    padding: 24px;
+    width: 512px;
+
+    h1 {
+      color: #1f2226;
+      font-weight: normal;
+      margin: 0 0 24px;
+    }
+
+    h2 {
+      color: #1f2226;
+      font-weight: normal;
+      margin: 0 0 16px;
+    }
+
+    p {
+      color: #73777a;
+      margin: 0 0 24px;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    .button {
+      background-color: black;
+      border-radius: 3px;
+      border-width: 0;
+      color: white;
+      padding: 8px 64px;
+    }
+  }
+}
+
+.signupFullFormContainer {
+  // background-color: $sidebar-bg;
+  display: flex;
+  height: 100%;
+
+  .signupFullFormLeft {
+    display: flex;
+    flex: 1;
+
+    .signupFullFormCard {
+      margin: auto;
+      width: 512px;
+
+      h1 {
+        color: #1f2226;
+        font-size: 21px;
+        font-weight: normal;
+        margin: 0 0 24px;
+      }
+
+      p {
+        color: #73777a;
+        margin: 0 0 24px;
+      }
+
+      form {
+        text-align: right;
+      }
+
+      .button {
+        background-color: black;
+        border-radius: 3px;
+        border-width: 0;
+        color: white;
+        padding: 8px 64px;
+      }
+    }
+  }
+
+  .signupFullFormRight {
+    background-color: #0056c9;
+    flex: 1;
+  }
+}

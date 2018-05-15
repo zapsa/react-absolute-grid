@@ -1,0 +1,35 @@
+.announcements {
+  margin-top: 5rem;
+}
+
+.announcement-list-item {
+  position: relative;
+  border: 1px solid $grey-200;
+
+  & > a {
+    display: block;
+    margin-right: 6rem;
+    padding: 2rem 0 2rem 2rem;
+    cursor: pointer;
+  }
+
+  h3 {
+    color: $grey-900;
+    @include font-m;
+  }
+}
+
+.announcement-list-item + .announcement-list-item {
+  border-top: 0;
+}
+
+.announcement-item-date {
+  color: $grey-600;
+  @include font-xs;
+}
+
+.announcement-item-menu {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}

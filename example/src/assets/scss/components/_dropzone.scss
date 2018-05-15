@@ -1,0 +1,42 @@
+.dropzone {
+  &--smallsquare {
+    .dropzone-drop-area {
+      width: 24rem;
+      height: 24rem;
+    }
+  }
+}
+
+.dropzone-content-link {
+  color: $prime-500;
+}
+
+.dropzone-drop-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  min-height: 12rem;
+  width: 100%;
+  border: 1px dashed $grey-400;
+  border-radius: $border-radius;
+  background-color: $grey-50;
+  color: $grey-600;
+  text-align: center;
+  cursor: pointer;
+  @include font-s;
+
+  &:hover {
+    background-color: $grey-100;
+  }
+
+  .zap-icon {
+    display: block;
+    margin-bottom: 0.5rem;
+    @include icon-fill($grey-600);
+  }
+
+  & + .media-list {
+    margin-top: 2rem;
+  }
+}

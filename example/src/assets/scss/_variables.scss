@@ -1,0 +1,86 @@
+
+// zapEditor
+//
+$editorMargins: 7rem;
+$editorMarginsSmall: 1em;
+
+// border-radius
+//
+$border-radius: 0.25rem;
+
+// Colors
+//
+
+$white-00: #ffffff;
+
+// prime (blue)
+$prime-50: #f2f8ff;
+$prime-100: #c0d9f8;
+$prime-200: #8fbaf1;
+$prime-300: #5a99ea;
+$prime-400: #2b7be3;
+$prime-500: #0056c9;
+$prime-600: #0045ad;
+$prime-700: #003b94;
+$prime-800: #002f7a;
+$prime-900: #001f5e;
+
+// grey
+$grey-50: #f7f7f7;  // old grey-50 #f5f5f5
+$grey-100: #f1f1f1;
+$grey-200: #ebebeb;
+$grey-300: #dcddde;
+$grey-400: #b9bbbd;
+$grey-500: #9c9ea1;
+$grey-600: #73777a;
+$grey-700: #53585d;
+$grey-800: #32383d;
+$grey-900: #1f2226;
+
+// grey-transparent
+$grey-50-t: rgba($grey-900, 0.04);
+$grey-100-t: rgba($grey-900, 0.06);
+$grey-200-t: rgba($grey-900, 0.09);
+$grey-300-t: rgba($grey-900, 0.15);
+$grey-400-t: rgba($grey-900, 0.31);
+$grey-500-t: rgba($grey-900, 0.44);
+$grey-600-t: rgba($grey-900, 0.62);
+$grey-700-t: rgba($grey-900, 0.76);
+$grey-800-t: rgba($grey-900, 0.90);
+$grey-900-t: $grey-900;
+
+// green
+$green-50: #edf7f5;
+$green-100: #bee4d4;
+$green-200: #8ed1b5;
+$green-300: #5fbf95;
+$green-400: #2fac76;
+$green-500: #009957;
+$green-600: #0b834b;
+$green-700: #076d3f;
+$green-800: #045632;
+$green-900: #004024;
+
+// orange
+$orange-50: #fff6ed;
+$orange-100: #ffe2c3;
+$orange-200: #ffce99;
+$orange-300: #ffb970;
+$orange-400: #ffa546;
+$orange-500: #ff911c;
+$orange-600: #f68619;
+$orange-700: #ec7a16;
+$orange-800: #e36f14;
+$orange-900: #d96411;
+
+// red
+$red-50: #fff2f4;
+$red-100: #f6c9cd;
+$red-200: #eea0a7;
+$red-300: #e57680;
+$red-400: #dd4d5a;
+$red-500: #d42433;
+$red-600: #b51f2e;
+$red-700: #991a29;
+$red-800: #7d1523;
+$red-900: #590f1a;

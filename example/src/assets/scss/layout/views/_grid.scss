@@ -1,0 +1,170 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.view-grid {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 35rem;
+  //overflow: hidden;
+  margin: 1rem;
+  border: 1px solid $grey-200;
+  border-radius: $border-radius;
+  background-color: white;
+  @include shadowLevel-100;
+
+  .picture {
+    display: block;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .body {
+    margin: 2rem;
+
+    .title {
+      color: $grey-900;
+      font-weight: 500;
+      @include font-m;
+
+      a {
+        color: $grey-900;
+      }
+    }
+  }
+
+  .metaBar {
+    display: flex;
+    align-items: center;
+    margin: auto 2rem 2rem 2rem;
+
+    .actions {
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  // 1440px breakpoint
+  .view-grid {
+    flex: 0 1 calc(25% - 2rem);
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  // 1024px breakpoint
+  .view-grid {
+    flex: 0 1 calc(33% - 2rem);
+  }
+}
+
+
+// Modifier
+//
+
+.view-grid--events {
+  .body {
+    display: flex;
+
+    .title {
+      margin-left: 1rem;
+      word-break: break-word;
+    }
+  }
+}
+
+.view-grid--news {
+  // EMPTY
+}
+
+
+.view-grid--contacts {
+  .body {
+    color: #73777a;
+    text-align: center;
+  }
+
+  .avatar {
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    width: 16rem;
+    height: 16rem;
+    border-radius: calc(16rem / 2);
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+.view-grid--photos {
+  .picture {
+    display: flex;  // display: block;
+    flex-direction: row;
+  }
+
+  .gallery-cover {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 63.31%;
+    max-height: 22rem;
+    width: calc(70% - 1rem);
+    height: 100%;
+    background-color: transparent;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .gallery-secondary {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    width: 30%;
+
+    & > div {
+      width: 100%;
+      height: calc(50% - 0.5rem);
+    }
+  }
+
+  .gallery-secondary-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    & + .gallery-secondary-container {
+      margin-top: 1rem;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: auto;
+      height: 100%;
+    }
+  }
+}

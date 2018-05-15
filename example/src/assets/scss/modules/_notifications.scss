@@ -1,0 +1,51 @@
+.notifications {
+  padding: 8rem 0;
+}
+
+.notifications-list {
+  border: 1px solid #ebebeb;
+
+  .notifications-list-item {
+    display: flex;
+    padding: 2rem;
+
+    .notifications-list-item-activity {
+      margin-right: 2rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: calc(1rem / 2);
+
+      &.active {
+        background-color: #0056c9;
+      }
+    }
+
+    .notifications-list-item-avatar {
+      width: 5rem;
+      height: 5rem;
+
+      img {
+        border-radius: 0.375rem;
+      }
+    }
+
+    .notifications-list-item-content {
+      flex: 1;
+      margin-left: 1rem;
+      color: #1f2226;
+
+      .datetime {
+        color: #73777a;
+        font-size: 1.5rem;
+      }
+
+      .actions {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .notifications-list-item + .notifications-list-item {
+    border-top: 1px solid #ebebeb;
+  }
+}

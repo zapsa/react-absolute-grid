@@ -1,0 +1,80 @@
+.cropper {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.cropper-view-box {
+  outline: 2px solid $grey-200;
+}
+
+.cropper-menu {
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+  display: inline-flex;
+  margin-top: 1rem;
+  margin-top: 1rem;
+  border: 1px solid $grey-200;
+  border-radius: $border-radius;
+  background-color: $white-00;
+  transform: translateX(-50%);
+  @include shadowLevel-100;
+}
+
+.cropper-menu-group {
+  display: flex;
+  height: 4rem;
+  border-right: 1px solid $grey-200;
+}
+
+.cropper-menu-button {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  @include icon-fill($grey-600);
+
+  &:hover {
+    @include icon-fill($grey-900);
+  }
+
+  &.is-active {
+    background-color: $prime-50;
+    @include icon-fill($prime-500);
+  }
+}
+
+.cropper-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  height: 45rem;
+  background-color: $grey-50;
+
+  .button {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.cropper-placeholder-description {
+  color: $grey-600;
+  @include font-xs;
+}
+
+.cropper-note {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  color: $grey-300;
+  text-align: center;
+  @include font-xs;
+}

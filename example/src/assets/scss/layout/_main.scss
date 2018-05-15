@@ -1,0 +1,37 @@
+.main {
+  flex: 1;
+  overflow: auto;
+  color: $grey-900;
+  font-size: 1.875rem;
+
+  .container {
+    margin: 0 auto;
+    max-width: 90rem;
+    width: 100%;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  h1 {
+    margin: 0 0 4rem;
+    color: $grey-900;
+    font-weight: 400;
+    @include font-xxl;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

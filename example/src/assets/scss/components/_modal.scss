@@ -1,0 +1,56 @@
+.modal {
+  margin: 8vh auto auto;
+  padding: 3rem;
+  width: 90rem;
+  border: 1px solid $grey-200;
+  border-radius: $border-radius;
+  color: $grey-900;
+  @include shadowLevel-300;
+
+  &--medium {
+    width: 64rem;
+
+    .modal-title {
+      @include font-l;
+    }
+  }
+
+  &--small {
+    padding: 1rem;
+    width: 40rem;
+    @include shadowLevel-200;
+  }
+}
+
+.modal-title {
+  margin-bottom: 3rem;
+  @include font-xl;
+}
+
+.modal-body {
+  margin-bottom: 3rem;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .button + .button {
+    margin-right: 2rem;
+  }
+}
+
+.modal-header {
+  margin-bottom: 3rem;
+}
+
+.modal-header-title {
+  margin-bottom: 1rem;
+  @include font-xl;
+}
+
+.modal-body-scrollList .list-content {
+  overflow-y: auto;
+  min-height: 25rem;
+  max-height: calc(72vh - 40rem);
+}

@@ -1,0 +1,28 @@
+.zap-icon {
+  display: inline-block;
+  line-height: 1rem;
+
+  &.icon--12dp {
+    width: 1.333rem;
+    height: 1.333rem;
+    line-height: 1rem;
+
+    svg {
+      width: 1.333rem;
+      height: 1.333rem;
+    }
+  }
+
+  &.icon--16dp {
+    div {
+      width: 2rem;
+      height: 2rem;
+      //line-height: 2rem;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+
+
+// Client branding
+//
+
+// Client Colors
+//
+
+
+// ---- define the clients color here ----
+
+
+// Sidebar
+//
+// every variable with null uses the default sytle
+
+$s-bg: null;
+$s-logoBorder: null;
+// Group Title
+$s-group-title: null;
+// Group Link
+$s-group-link-text: null;
+$s-group-link-text--hover: null;
+$s-group-link-text--active: null;
+$s-group-link--bg--hover: null;
+$s-group-link--bg--active: null;
+// Icons
+$s-iconColor: null;
+$s-iconOpacity: null;
+$s-iconColor--hover: null;
+$s-iconOpacity--hover: null;
+$s-iconColor--active: null;
+$s-iconOpacity--active: null;
+// Badge
+$s-badge-bg: null;
+$s-badge-text: null;
+$s-badge-bg--active: null;
+$s-badge-text--active: null;
+// Sublinkes
+$s-sublinks: null;
+// Right-Border Color
+$s-rightBorder-color: null;
+
+
+
+
+//////////////////////////////////////
+// LXA - Test
+//
+
+/*
+
+// Client Colors
+//
+
+$client-prime-color: #186ead;
+$client-grey-shade1: #4c5255;
+$client-grey-shade2: #818588;
+$client-grey-shade3: #c1c3c4;
+$client-grey-shade4: #e4e5e6;
+
+
+// Sidebar
+//
+// every variable with null uses the default sytle
+
+$s-bg: $client-grey-shade4;
+$s-logoBorder: rgba($client-grey-shade3, 0.5);
+// Group Title
+$s-group-title: $client-grey-shade2;
+// Group Link
+$s-group-link-text: $client-grey-shade1;
+$s-group-link-text--hover: $client-grey-shade1;
+$s-group-link-text--active: white;
+$s-group-link--bg--hover: $client-grey-shade3;
+$s-group-link--bg--active: $client-prime-color;
+// Icons
+$s-iconColor: $client-grey-shade1;
+$s-iconOpacity: 1;
+$s-iconColor--hover: $client-grey-shade1;
+$s-iconOpacity--hover: 1;
+$s-iconColor--active: #ffffff;
+$s-iconOpacity--active: 1;
+// Badge
+$s-badge-bg: $client-prime-color;
+$s-badge-text: white;
+$s-badge-bg--active: white;
+$s-badge-text--active: $client-prime-color;
+// Sublinkes
+$s-sublinks: $client-grey-shade2;
+// Right-Border Color
+$s-rightBorder-color: null;
+
+*/

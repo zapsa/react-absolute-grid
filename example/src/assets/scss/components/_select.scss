@@ -1,0 +1,33 @@
+.select-option-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: $grey-900;
+}
+
+.select-option-icon {
+  margin-right: 1rem;
+  @include icon-fill($grey-500);
+}
+
+.select-option-description {
+  width: 100%;
+  color: $grey-500;
+  @include font-xs;
+}
+
+// Select components overrides
+
+.Select-option {
+  &.is-active {
+    background-color: $grey-50;
+  }
+
+  &.is-selected {
+    background-color: $grey-100;
+  }
+
+  &.is-focused {
+    background-color: $grey-50;
+  }
+}

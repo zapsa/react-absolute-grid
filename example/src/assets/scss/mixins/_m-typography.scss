@@ -1,0 +1,39 @@
+@mixin font-xxl {
+  font-size: 4.5rem;
+  //line-height: 5rem;
+  line-height: 1.112;
+}
+
+@mixin font-xl {
+  font-size: 3rem;
+  //line-height: 4rem;
+  line-height: 1.334;
+}
+
+@mixin font-l {
+  letter-spacing: 0.05px;
+  font-size: 2.5rem;
+  //line-height: 3.5rem;
+  line-height: 1.4;
+}
+
+@mixin font-m {
+  letter-spacing: 0.1px;
+  font-size: 1.875rem;
+  //line-height: 3rem;
+  line-height: 1.6;
+}
+
+@mixin font-s {
+  letter-spacing: 0.1px;
+  font-size: 1.75rem;
+  //line-height: 2.5rem;
+  line-height: 1.429;
+}
+
+@mixin font-xs {
+  letter-spacing: 0.2px;
+  font-size: 1.5rem;
+  //line-height: 2rem;
+  line-height: 1.334;  //16px
+}

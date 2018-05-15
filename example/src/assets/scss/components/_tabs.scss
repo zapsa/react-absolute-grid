@@ -1,0 +1,54 @@
+.tabs {
+  margin: 0 0 2rem;
+  padding: 0;
+  border-bottom: 1px solid #dcddde;
+
+  .tabs-item {
+    display: inline-block;
+
+    button {
+      padding: 0 1rem 1rem;
+      color: #73777a;
+      cursor: pointer;
+
+      // &.active {
+      //   border-bottom: 2px solid #0056c9;
+      //   color: #1f2226;
+      //   font-weight: 500;
+      // }
+
+      .label {
+        margin-left: 0.5rem;
+      }
+    }
+
+    &.is-active {
+      button {
+        border-bottom: 2px solid #0056c9;
+        color: #1f2226;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .tabs-item + .tabs-item {
+    margin-left: 2rem;
+  }
+}
+
+.tabs--insideModal {
+  margin-right: -3rem;
+  margin-left: -3rem;
+
+  .tabs-item {
+    margin-left: 3rem;
+
+    button {
+      padding: 0 0 1rem 0;
+    }
+  }
+
+  .tabs-item + .tabs-item {
+    margin-left: 4rem;
+  }
+}

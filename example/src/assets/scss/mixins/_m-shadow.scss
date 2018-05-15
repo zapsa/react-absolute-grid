@@ -1,0 +1,43 @@
+@mixin shadowLevel-100 {
+  box-shadow: 0px 1px 4px 0px rgba($grey-900, 0.08);
+}
+
+@mixin shadowLevel-200 {
+  box-shadow: 0px 4px 8px 0px rgba($grey-900, 0.08);
+}
+
+@mixin shadowLevel-300 {
+  box-shadow: 0px 8px 16px 0px rgba($grey-900, 0.24);
+}
+
+
+// inverse Shadow
+//
+
+@mixin shadowInverseLevel-100 {
+  box-shadow: 0px -1px 4px 0px rgba($grey-900, 0.08);
+}
+
+@mixin shadowInverseLevel-200 {
+  box-shadow: 0px -8px 8px 0px rgba($grey-900, 0.08);
+}
+
+@mixin shadowInverseLevel-300 {
+  box-shadow: 0px -8px 16px 0px rgba($grey-900, 0.24);
+}
+
+
+// selected Shadow
+//
+
+@mixin shadowLevel-100--selected {
+  box-shadow: 0px 1px 4px 0px rgba($prime-500, 0.32);
+}
+
+@mixin shadowLevel-200--selected {
+  box-shadow: 0px 8px 8px 0px rgba($prime-500, 0.32);
+}
+
+@mixin shadowLevel-300--selected {
+  box-shadow: 0px 8px 16px 0px rgba($prime-500, 0.64);
+}

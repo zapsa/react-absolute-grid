@@ -1,0 +1,140 @@
+.zapEditor {
+  .toolbar {
+    margin-bottom: 1rem;
+  }
+  .mediaBlock-container {
+    &--small {
+      max-width: 50%;
+
+      @media (max-width: 800px) {
+        margin-right: 4rem;
+        margin-left: 4rem;
+        max-width: 80%;
+      }
+    }
+
+    &--normal {
+      margin-right: $editorMargins;
+      margin-left: $editorMargins;
+
+      @media (max-width: 800px) {
+        margin-right: $editorMarginsSmall;
+        margin-left: $editorMarginsSmall;
+      }
+    }
+  }
+
+  .toolbar {
+    margin-right: $editorMargins;
+    margin-left: $editorMargins;
+
+    @media (max-width: 800px) {
+      margin-right: $editorMarginsSmall;
+      margin-left: $editorMarginsSmall;
+    }
+  }
+
+  .editorBar {
+    border-radius: $border-radius;
+    background-color: $white-00;
+  }
+
+  .editorBar-group {
+    height: 4rem;
+  }
+
+  .editorBar-button {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .zapEditor {
+    padding-top: 1.5rem;
+  }
+
+  .zapEditor-viewingMode {
+    padding-top: 1.5rem;
+  }
+
+  .DraftEditor-root {
+    margin-right: $editorMargins;
+    margin-left: $editorMargins;
+
+    @media (max-width: 800px) {
+      margin-right: $editorMarginsSmall;
+      margin-left: $editorMarginsSmall;
+    }
+  }
+
+  .DraftEditor-editorContainer figure {
+    margin-right: -$editorMargins;
+    margin-bottom: 3rem;
+    margin-left: -$editorMargins;
+
+    @media (max-width: 800px) {
+      margin-right: -$editorMarginsSmall;
+      margin-left: -$editorMarginsSmall;
+    }
+  }
+
+  .input--embed {
+    height: 9rem;
+    resize: none;
+  }
+
+
+  // ICONS
+  //
+
+  .zap-icon {
+    div {
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+    }
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+
+  // TYPOGRAPHY
+  //
+
+  .DraftEditor-editorContainer {
+    @include font-m;
+
+    h1,
+    h2 {
+      margin-top: 2rem; //this only defines the margin of the first h1 & h2
+      margin-bottom: 1rem;
+      font-weight: 500;
+      @include font-xl;
+    }
+
+    div ~ h1,
+    div ~ h2 {
+      // add spacing between text and headlines
+      margin-top: 5rem;
+    }
+
+    h3 {
+      margin-top: 5rem;
+      margin-bottom: 1rem;
+      @include font-l;
+    }
+
+    blockquote {
+      margin: 2rem 0 3rem 2rem;
+      padding: 0.5rem 0 0.5rem 1rem;
+      color: $grey-600;
+      @include font-l;
+    }
+
+    a {
+      cursor: text;
+    }
+  }
+}

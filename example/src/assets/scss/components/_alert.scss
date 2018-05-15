@@ -1,0 +1,9 @@
+.alert {
+  padding: 2rem;
+}
+
+.alert--error {
+  border-radius: $border-radius;
+  background-color: $red-50;
+  color: $red-600;
+}

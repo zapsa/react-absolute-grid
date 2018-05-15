@@ -1,0 +1,21 @@
+.eventBadge {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 5rem;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid #979797;
+  border-radius: 0.5rem;
+  font-size: 1.75rem;
+  line-height: 2rem;
+
+  .eventBadge-day {
+    color: #1f2226;
+  }
+
+  .eventBadge-month {
+    color: #d42433;
+  }
+}

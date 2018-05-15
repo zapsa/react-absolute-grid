@@ -1,0 +1,16 @@
+.actionbar {
+  display: flex;
+  flex: 0 0 7rem; //
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid #ebebeb;
+
+  .action-block {
+    margin-left: auto;
+  }
+
+  button + button {
+    margin-left: 1rem;
+  }
+}

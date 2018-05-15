@@ -1,0 +1,111 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &--right {
+    .dropdown-content {
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100%); //calc(100% + 1rem)
+  //left: 50%;
+  left: 0;
+  z-index: 50;
+  display: none;
+  min-width: 15rem;
+  border: 1px solid #dfdfdf;
+  border-radius: $border-radius;
+  background-color: white;
+  text-align: left;
+  //transform: translate(-50%, 0);
+  @include shadowLevel-200;
+
+  &.dropdown-content--open {
+    display: block;
+  }
+
+  // &:before {
+  //   position: absolute;
+  //   top: calc(-1rem + -2px);
+  //   left: 50%;
+  //   margin-left: calc(-1rem + -2px);
+  //   border-right: calc(1rem + 2px) solid transparent;
+  //   border-bottom: calc(1rem + 2px) solid #dfdfdf;
+  //   border-left: calc(1rem + 2px) solid transparent;
+  //   content: '';
+  // }
+  //
+  // &:after {
+  //   position: absolute;
+  //   top: -1rem;
+  //   left: 50%;
+  //   margin-left: -1rem;
+  //   border-right: 1rem solid transparent;
+  //   border-bottom: 1rem solid #ffffff;
+  //   border-left: 1rem solid transparent;
+  //   content: '';
+  // }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
+    white-space: nowrap;
+
+    > li {
+      //border-top: 1px solid #dfdfdf;
+
+      button,
+      a {
+        display: block;
+        padding: 1rem 2rem;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        color: $grey-900;
+        text-align: left;
+        cursor: pointer;
+        @include font-m;
+
+        &:hover {
+          //color: #0069ff;
+          background-color: $grey-50;
+        }
+      }
+
+      .dropdown-button-delete {
+        color: $red-500;
+      }
+
+      &:first-child {
+        border-top-width: 0;
+      }
+    }
+  }
+}
+
+// New Styles
+
+.dropdown-button {
+  display: block;
+  padding: 0.5rem;
+  line-height: 1rem;
+  @include icon-fill($grey-500);
+
+  &:hover {
+    @include icon-fill($grey-600);
+  }
+
+  &.button {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    @include icon-fill($grey-600);
+  }
+}
