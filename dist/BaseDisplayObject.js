@@ -66,14 +66,18 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
         if (!this.props.dragManager.dragItem) {
           pauseAnimation = true;
           setTimeout(function () {
-            _this2.setState({ pauseAnimation: false });
+            if (!_this2.unmounted) {
+              _this2.setState({ pauseAnimation: false });
+            }
           }, 20);
         }
-        this.setState({
-          dragX: x,
-          dragY: y,
-          pauseAnimation: pauseAnimation
-        });
+        if (!this.unmounted) {
+          this.setState({
+            dragX: x,
+            dragY: y,
+            pauseAnimation: pauseAnimation
+          });
+        }
       }
     }, {
       key: 'getStyle',
@@ -112,6 +116,7 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
     }, {
       key: 'componentWillUnmount',
       value: function componentWillUnmount() {
+        this.unmounted = true;
         if (this.props.dragEnabled) {
           this.props.dragManager.endDrag();
           this.domNode.removeEventListener('mousedown', this.onDrag);

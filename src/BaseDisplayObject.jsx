@@ -24,14 +24,18 @@ export default function createDisplayObject(DisplayObject, displayProps, forceIm
       if (!this.props.dragManager.dragItem) {
         pauseAnimation = true;
         setTimeout(() => {
-          this.setState({ pauseAnimation: false });
+          if (!this.unmounted) {
+            this.setState({ pauseAnimation: false });
+          }
         }, 20);
       }
-      this.setState({
-        dragX: x,
-        dragY: y,
-        pauseAnimation,
-      });
+      if (!this.unmounted) {
+        this.setState({
+          dragX: x,
+          dragY: y,
+          pauseAnimation,
+        });
+      }
     }
 
     onDrag = (e) => {
@@ -85,6 +89,7 @@ export default function createDisplayObject(DisplayObject, displayProps, forceIm
     }
 
     componentWillUnmount() {
+      this.unmounted = true;
       if (this.props.dragEnabled) {
         this.props.dragManager.endDrag();
         this.domNode.removeEventListener('mousedown', this.onDrag);
