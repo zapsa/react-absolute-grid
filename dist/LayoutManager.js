@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -16,9 +16,9 @@ var LayoutManager = function () {
   }
 
   _createClass(LayoutManager, [{
-    key: "update",
+    key: 'update',
     value: function update(options, width) {
-      //Calculates layout
+      // Calculates layout
       this.layoutWidth = width;
       this.zoom = options.zoom;
       this.itemWidth = Math.round(options.itemWidth * this.zoom);
@@ -29,22 +29,22 @@ var LayoutManager = function () {
       this.rowHeight = this.itemHeight + this.verticalMargin;
     }
   }, {
-    key: "getTotalHeight",
+    key: 'getTotalHeight',
     value: function getTotalHeight(filteredTotal) {
       return Math.ceil(filteredTotal / this.columns) * this.rowHeight - this.verticalMargin;
     }
   }, {
-    key: "getRow",
+    key: 'getRow',
     value: function getRow(index) {
       return Math.floor(index / this.columns);
     }
   }, {
-    key: "getColumn",
+    key: 'getColumn',
     value: function getColumn(index) {
       return index - this.getRow(index) * this.columns;
     }
   }, {
-    key: "getPosition",
+    key: 'getPosition',
     value: function getPosition(index) {
       var col = this.getColumn(index);
       var row = this.getRow(index);
@@ -57,31 +57,31 @@ var LayoutManager = function () {
       };
     }
   }, {
-    key: "getTransform",
+    key: 'getTransform',
     value: function getTransform(index) {
       var position = this.getPosition(index);
-      return "translate3d(" + position.x + "px, " + position.y + "px, 0)";
+      return 'translate3d(' + position.x + 'px, ' + position.y + 'px, 0)';
     }
   }, {
-    key: "getStyle",
+    key: 'getStyle',
     value: function getStyle(index, animation, isFiltered) {
       var transform = this.getTransform(index);
       var style = {
-        width: this.itemWidth + "px",
-        height: this.itemHeight + "px",
+        width: this.itemWidth + 'px',
+        height: this.itemHeight + 'px',
         WebkitTransform: transform,
         MozTransform: transform,
         msTransform: transform,
         transform: transform,
-        position: "absolute",
-        boxSizing: "border-box",
-        display: isFiltered ? "none" : "block"
+        position: 'absolute',
+        boxSizing: 'border-box',
+        display: isFiltered ? 'none' : 'block'
       };
 
       if (animation) {
-        style.WebkitTransition = "-webkit-" + animation;
-        style.MozTransition = "-moz-" + animation;
-        style.msTransition = "ms-" + animation;
+        style.WebkitTransition = '-webkit-' + animation;
+        style.MozTransition = '-moz-' + animation;
+        style.msTransition = 'ms-' + animation;
         style.transition = animation;
       }
 

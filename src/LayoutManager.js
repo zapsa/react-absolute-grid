@@ -12,7 +12,7 @@ export default class LayoutManager {
   }
 
   update(options, width) {
-    //Calculates layout
+    // Calculates layout
     this.layoutWidth = width;
     this.zoom = options.zoom;
     this.itemWidth = Math.round(options.itemWidth * this.zoom);
@@ -21,20 +21,14 @@ export default class LayoutManager {
     this.horizontalMargin =
       this.columns === 1
         ? 0
-        : Math.round(this.layoutWidth - this.columns * this.itemWidth) /
-          (this.columns - 1);
+        : Math.round(this.layoutWidth - this.columns * this.itemWidth) / (this.columns - 1);
     this.verticalMargin =
-      options.verticalMargin === -1
-        ? this.horizontalMargin
-        : options.verticalMargin;
+      options.verticalMargin === -1 ? this.horizontalMargin : options.verticalMargin;
     this.rowHeight = this.itemHeight + this.verticalMargin;
   }
 
   getTotalHeight(filteredTotal) {
-    return (
-      Math.ceil(filteredTotal / this.columns) * this.rowHeight -
-      this.verticalMargin
-    );
+    return Math.ceil(filteredTotal / this.columns) * this.rowHeight - this.verticalMargin;
   }
 
   getRow(index) {
@@ -53,33 +47,33 @@ export default class LayoutManager {
 
     return {
       x: Math.round(col * width + col * margin),
-      y: Math.round((this.itemHeight + this.verticalMargin) * row)
+      y: Math.round((this.itemHeight + this.verticalMargin) * row),
     };
   }
 
   getTransform(index) {
     const position = this.getPosition(index);
-    return "translate3d(" + position.x + "px, " + position.y + "px, 0)";
+    return `translate3d(${position.x}px, ${position.y}px, 0)`;
   }
 
   getStyle(index, animation, isFiltered) {
     const transform = this.getTransform(index);
     const style = {
-      width: this.itemWidth + "px",
-      height: this.itemHeight + "px",
+      width: `${this.itemWidth}px`,
+      height: `${this.itemHeight}px`,
       WebkitTransform: transform,
       MozTransform: transform,
       msTransform: transform,
-      transform: transform,
-      position: "absolute",
-      boxSizing: "border-box",
-      display: isFiltered ? "none" : "block"
+      transform,
+      position: 'absolute',
+      boxSizing: 'border-box',
+      display: isFiltered ? 'none' : 'block',
     };
 
     if (animation) {
-      style.WebkitTransition = "-webkit-" + animation;
-      style.MozTransition = "-moz-" + animation;
-      style.msTransition = "ms-" + animation;
+      style.WebkitTransition = `-webkit-${animation}`;
+      style.MozTransition = `-moz-${animation}`;
+      style.msTransition = `ms-${animation}`;
       style.transition = animation;
     }
 

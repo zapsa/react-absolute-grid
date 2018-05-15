@@ -125,9 +125,13 @@ function createDisplayObject(DisplayObject, displayProps, forceImpure) {
 
         return _react2.default.createElement(
           'div',
-          { ref: function ref(node) {
+          {
+            ref: function ref(node) {
               return _this3.domNode = node;
-            }, style: this.getStyle() },
+            },
+            style: this.getStyle(),
+            className: this.props.itemClass
+          },
           _react2.default.createElement(DisplayObject, _extends({}, displayProps, {
             item: this.props.item,
             index: this.props.index,

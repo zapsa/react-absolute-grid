@@ -71,6 +71,16 @@ class ExampleView extends Component {
     const onMoveDebounced = debounce(this.onMove, 40);
     return (
       <div style={{ minHeight: '100vh' }}>
+        {/* <AbsoluteGrid items={this.state.data} responsive /> */}
+        {/* <AbsoluteGrid
+          dragEnabled
+          items={this.state.data}
+          zoom={0.7}
+          responsive
+          verticalMargin={42}
+          itemWidth={230}
+          itemHeight={409}
+        /> */}
         <AbsoluteGrid
           onMove={onMoveDebounced}
           dragEnabled

@@ -17,6 +17,7 @@ export default function createAbsoluteGrid(DisplayObject, displayProps = {}, for
       keyProp: 'key',
       filterProp: 'filtered',
       sortProp: 'sort',
+      itemClass: undefined,
       itemWidth: 128,
       itemHeight: 128,
       verticalMargin: -1,
@@ -34,6 +35,7 @@ export default function createAbsoluteGrid(DisplayObject, displayProps = {}, for
       items: PropTypes.arrayOf(PropTypes.object).isRequired,
       itemWidth: PropTypes.number,
       itemHeight: PropTypes.number,
+      itemClass: PropTypes.string,
       verticalMargin: PropTypes.number,
       zoom: PropTypes.number,
       responsive: PropTypes.bool,
@@ -98,6 +100,7 @@ export default function createAbsoluteGrid(DisplayObject, displayProps = {}, for
             animation={this.props.animation}
             itemWidth={this.props.itemWidth}
             itemHeight={this.props.itemHeight}
+            itemClass={this.props.itemClass}
             layoutWidth={this.state.layoutWidth}
             verticalMargin={this.props.verticalMargin}
             zoom={this.props.zoom}

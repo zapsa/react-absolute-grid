@@ -94,7 +94,11 @@ export default function createDisplayObject(DisplayObject, displayProps, forceIm
 
     render() {
       return (
-        <div ref={node => (this.domNode = node)} style={this.getStyle()}>
+        <div
+          ref={node => (this.domNode = node)}
+          style={this.getStyle()}
+          className={this.props.itemClass}
+        >
           <DisplayObject
             {...displayProps}
             item={this.props.item}
