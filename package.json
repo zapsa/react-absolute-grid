@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
+    "lodash.sortby": "^4.7.0",
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {
